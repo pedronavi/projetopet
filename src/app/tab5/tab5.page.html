@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="toolbar">Atualizar Animais</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="achados">
+
+    <ion-slides pager>
+      <ion-slide class="slide1">
+        <img src="assets/images/slidepet.png">
+      </ion-slide>
+
+      <ion-slide class="slide2">
+        <img src="assets/images/slide1.png">
+      </ion-slide>
+      <ion-slide class="slide3">
+        <img src="assets/images/slidepet.png">
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <form #form="ngForm" (ngSubmit)="upAnimal(form)">
+    <ion-item>
+      <ion-label position="floating" [ngModel]="animal.nome" name="nome"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" [ngModel]="animal.descricao" name="descricao"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" [ngModel]="animal.endereco" name="endereco"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" [ngModel]="animal.genero" name="genero"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+
+    <ion-button type="submit" expand="block">Atualizar</ion-button>
+
+
+
+  </form>
+
+
+
+</ion-content>
