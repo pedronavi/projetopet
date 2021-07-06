@@ -1,60 +1,57 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title class="toolbar">Mostrar Animal</ion-title>
-  </ion-toolbar>
+   <ion-buttons slot="start"><ion-button><ion-icon slot="icon-only" name="person-circle"></ion-icon></ion-button></ion-buttons>  
+   <ion-title class="toolbar">Mostrar Animal</ion-title>
+ </ion-toolbar>
 </ion-header>
 
-<ion-content class="content" [fullscreen]="true">
+<ion-content class="content" [fullscreen]="true" >
 
-  <div class="achados">
+ <div class= "achados">
+   
+   <ion-slides pager>
+     <ion-slide class="slide1">
+       <img src="assets/images/slidepet.png">
+     </ion-slide>
 
-    <ion-slides pager>
-      <ion-slide class="slide1">
-        <img src="assets/images/slidepet.png">
-      </ion-slide>
+     <ion-slide class="slide2">
+       <img src="assets/images/slide1.png">
+     </ion-slide>
+     <ion-slide class="slide3">
+       <img src="assets/images/slidepet.png">
+     </ion-slide>
+   </ion-slides>
+ </div>
 
-      <ion-slide class="slide2">
-        <img src="assets/images/slide1.png">
-      </ion-slide>
-      <ion-slide class="slide3">
-        <img src="assets/images/slidepet.png">
-      </ion-slide>
-    </ion-slides>
-  </div>
-
-  <!-- <h3>{{animal.nome}}</h3>
+ <!-- <h3>{{animal.nome}}</h3>
  <p><strong>Descrição:</strong> {{animal.descricao}}.  </p>
  <p><strong>Local:</strong>{{animal.endereco}}</p>
  <p><strong>Genêro:</strong>{{animal.genero}}</p>
 -->
 
-    <ion-item>
-      <ion-label position="floating">{{animal.nome}}</ion-label>
-      <ion-input type="text" name="nome" [ngModel]="animal.nome"></ion-input>
-    </ion-item>
+<form #form="ngForm" (ngSubmit)="upAnimal(form)">
+  <ion-item>
+    <ion-label position="floating">{{animal.nome}}</ion-label>
+    <ion-input  type="text" name="nome" [ngModel]="animal.nome"></ion-input>
+  </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">{{animal.descricao}}</ion-label>
-      <ion-input type="text" name="descricao" [ngModel]="animal.descricao"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">{{animal.descricao}}</ion-label>
+    <ion-input type="text" name="descricao" [ngModel]="animal.descricao"></ion-input>                         
+  </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">{{animal.endereco}}</ion-label>
-      <ion-input type="text" name="endereco" [ngModel]="animal.endereco"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">{{animal.endereco}}</ion-label>
+    <ion-input type="text" name="endereco" [ngModel]="animal.endereco"></ion-input>                         
+  </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">{{animal.genero}}</ion-label>
-      <ion-input type="text" name="genero" [ngModel]="animal.genero"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="floating">{{animal.genero}}</ion-label>
+    <ion-input type="text" name="genero" [ngModel]="animal.genero"></ion-input>                         
+  </ion-item>
 
 
-    <ion-button type="submit" expand="block">Atualizar</ion-button>
-
-  </form>
+  <ion-button type="submit" expand="block">Atualizar</ion-button>
+  
+</form>
 </ion-content>

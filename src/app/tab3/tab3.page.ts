@@ -10,7 +10,7 @@ import { Usuario } from '../services/user';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page{
 
   @ViewChild(IonSlides) slides: IonSlides;
   public wavesPosition: number = 0;
@@ -24,8 +24,8 @@ export class Tab3Page {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     //  public keyboard: Keyboard
-
-  ) { }
+    
+  ) {}
 
 
   segmentChanged(event: any) {
@@ -71,6 +71,6 @@ export class Tab3Page {
     const toast = await this.toastCtrl.create({ message: 'Usuário ou senha incorreta!', duration: 2000 });
     toast.present();
   }
-
+  
 
 }

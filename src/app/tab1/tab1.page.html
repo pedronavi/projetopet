@@ -1,18 +1,14 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+   <ion-toolbar>
+    <ion-buttons slot="start"><ion-button><ion-icon slot="icon-only" name="person-circle"></ion-icon></ion-button></ion-buttons>  
     <ion-title class="toolbar">Animais</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="content" [fullscreen]="true">
+<ion-content class="content" [fullscreen]="true" >
 
-  <div class="achados">
-
+  <div class= "achados">
+    
     <ion-slides pager [options]="slideOpts">
       <ion-slide class="slide1">
         <img src="assets/images/slide1.png">
@@ -29,47 +25,47 @@
 
   <ion-list class="list">
     <ion-card>
-      <ion-item-sliding *ngFor='let animal of animais'>
+    <ion-item-sliding *ngFor='let animal of animais'>
+   
+      <ion-item >
+       <!-- <ion-button [routerLink]="['/tab5', id]"><ion-icon name="pencil-outline"></ion-icon></ion-button> -->
+       <ion-button [routerLink]="['/tab5', animal.id]"><ion-icon name="pencil-outline"></ion-icon></ion-button>
+        <ion-thumbnail slot="start">
+           <ion-img [src]=animal.url></ion-img>
+        </ion-thumbnail>
 
-        <ion-item>
-          <!-- click no botão para editar o animal -->
-          <ion-button [routerLink]="['/tab5', animal.id]">
-            <ion-icon name="pencil-outline"></ion-icon>
-          </ion-button>
-          <ion-thumbnail slot="start">
-            <ion-img [src]=animal.url></ion-img>
-          </ion-thumbnail>
-
-          <ion-card-content (click)="exibirCadastro(animal.id)">
-            <!-- Click no card para exibir o animal -->
-            <ion-label hidden> {{animal.id}} </ion-label>
-            <!-- <ion-label> {{animal.id}}</ion-label> -->
-            <ion-label>{{animal.nome}}</ion-label>
-            <ion-label><strong>Descrição:</strong> {{animal.descricao}}. </ion-label>
-            <ion-label><strong>Local:</strong>{{animal.endereco}}</ion-label>
-            <ion-label><strong>Genêro:</strong>{{animal.genero}}</ion-label>
+        <ion-card-content (click)="editaCadastro(animal.id)"> 
+          <ion-label hidden> {{animal.id}} </ion-label>
+          <ion-label>{{animal.nome}}</ion-label>
+          <ion-label><strong>Descrição:</strong> {{animal.descricao}}.  </ion-label>
+          <ion-label><strong>Local:</strong>{{animal.endereco}}</ion-label>
+          <ion-label><strong>Genêro:</strong>{{animal.genero}}</ion-label>
           </ion-card-content>
 
-        </ion-item>
-        <ion-item-options side="start">
 
-          <ion-item-option color="success" (click)="compartilhar()">
-            <ion-icon name="share"></ion-icon>Compartilhar
-          </ion-item-option>
+          <!-- <ion-card-content [routerLink]="['/tab7']">
+          <ion-label>{{animal.nome}}</ion-label>
+          <ion-label><strong>Descrição:</strong> {{animal.descricao}}.  </ion-label>
+          <ion-label><strong>Local:</strong>{{animal.endereco}}</ion-label>
+          <ion-label><strong>Genêro:</strong>{{animal.genero}}</ion-label>
+          </ion-card-content>    -->
+          
+      </ion-item>
+      <ion-item-options side="start">
+        
+      <ion-item-option color="success" (click)="compartilhar()"><ion-icon name="share" ></ion-icon>Compartilhar</ion-item-option>
+      
+      </ion-item-options>
 
-        </ion-item-options>
-
-        <ion-item-options side="end">
-
-          <ion-item-option (click)="deletarAnimal(animal.id)" color="danger">
-            <ion-icon name="trash"></ion-icon> Apagar
-          </ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-card>
-  </ion-list>
+      <ion-item-options side="end">
+        
+        <ion-item-option (click)="deletarAnimal(animal.id)" color="danger"><ion-icon name="trash"></ion-icon> Apagar </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+  </ion-list> 
 
 
-
+  
 
 </ion-content>

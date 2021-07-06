@@ -11,37 +11,37 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab1Page implements OnInit {
 
+  
 
-
-  animais: any[] = [];
-
-
+   animais : any[] = [];
+   
+  
   constructor(
     private fb: FotosdbService,
     private loading: LoadingController,
     private alertControl: AlertController,
     public actionSheetController: ActionSheetController,
     public nav: NavController
-  ) {
+    ) {
   }
-
+  
   ngOnInit(): void {
     this.fb.getAllAnimal().subscribe(results => this.animais = results);
     this.loadMessage()
   }
 
 
-  async loadMessage() {
-    let load = await this.loading.create({
-      message: 'Aguarde...',
-      duration: 1000
-    });
+async loadMessage(){
+  let load = await this.loading.create({
+    message: 'Aguarde...',
+    duration: 1000
+  });
 
-    await load.present()
-  }
+  await load.present()
+}
 
 
-  async deletarAnimal(id) {
+  async deletarAnimal(id){
 
     console.log(id)
     const alert = await this.alertControl.create({
@@ -51,7 +51,7 @@ export class Tab1Page implements OnInit {
           text: 'Sim',
           cssClass: 'secondary',
           handler: () => this.fb.deletarAnimal(id)
-        }, {
+        },{
           text: 'Cancelar',
           role: 'cancel',
           cssClass: 'secondary'
@@ -59,30 +59,27 @@ export class Tab1Page implements OnInit {
       ]
     })
     await alert.present();
-  }
+  } 
 
 
-  async compartilhar() {
+  async compartilhar(){
     const actionSheet = await this.actionSheetController.create({
       header: "Compartilhar",
       buttons: [{
         text: " Whatsapp",
-        icon: "logo-whatsapp"
-      },
-      {
-        text: " Facebook",
-        icon: "logo-facebook"
-      },
+        icon: "logo-whatsapp"},
+        {
+      text: " Facebook",
+      icon: "logo-facebook"},
       {
         text: " Twitter",
-        icon: "logo-twitter"
-      },
+      icon: "logo-twitter"},
       {
         text: 'Cancelar',
         icon: 'close',
         role: 'cancel',
-      }
-      ]
+        }
+]
     }
     )
     await actionSheet.present();
@@ -91,15 +88,14 @@ export class Tab1Page implements OnInit {
 
   slideOpts = {
     initialSlide: 0,
-    speed: 200,
-    autoplay: true
+    speed: 200
   };
+  
+  
 
 
 
-
-
-  exibirCadastro(id) {
+  editaCadastro(id){
     console.log(id);
     this.nav.navigateForward('/tab7', id)
   }
@@ -108,8 +104,8 @@ export class Tab1Page implements OnInit {
 
 
 
+  
 
 
-
-
+  
 }

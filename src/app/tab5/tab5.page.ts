@@ -19,20 +19,19 @@ export class Tab5Page implements OnInit {
     private nav: NavController
   ) { }
 
-  ngOnInit() {
+  ngOnInit(){
     this.routerId = this.ar.snapshot.params['id'];
     console.log('oi');
 
-    if (this.routerId) {
-      this.fb.getAnimal(this.routerId).subscribe(caixa => this.animal = caixa)
+    if(this.routerId){
+      this.fb.getAnimal(this.routerId).subscribe(caixa => this.animal = caixa )
     }
   }
 
-  upAnimal(form) {
+  upAnimal(form){
     console.log(form.value)
     this.fb.updateAnimal(this.routerId, form.value);
     this.nav.navigateForward('/tabs/tab1')
   }
 
-  
 }

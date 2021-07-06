@@ -12,7 +12,7 @@ import { Usuario } from '../services/user';
 })
 export class Tab4Page implements OnInit {
   routerId = null;
-  animal: Animal = {};
+  animal:Animal = {};
   authService: any;
   public userRegister: Usuario = {}
   private loading: any;

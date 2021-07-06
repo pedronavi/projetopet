@@ -10,42 +10,42 @@ import { NavController } from '@ionic/angular';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page implements OnInit {
-
-
-  constructor(
+export class Tab2Page implements OnInit{
+ 
+  
+  constructor(   
     private db: FotosdbService,
     private loading: LoadingController,
     public toastController: ToastController,
     private nav: NavController
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-    this.loadMessage()
+  ngOnInit(): void { 
+   this.loadMessage()
   }
 
-  async loadMessage() {
+  async loadMessage(){
     let load = await this.loading.create({
       message: 'Aguarde...',
       duration: 2000
     });
-
+  
     await load.present()
   }
 
+  
 
-
-  salvar(form) {
+  salvar(form){
     console.log(form.value)
     this.db.cadAnimal(form.value);
   }
 
-  async toast() {
+  async toast(){
     const toast = await this.toastController.create({
       message: 'Upload feito com sucesso!',
       duration: 2000,
       position: "middle"
-
+      
     });
     this.nav.navigateForward('/tabs/tab1')
     toast.present();
@@ -53,9 +53,8 @@ export class Tab2Page implements OnInit {
 
   slideOpts = {
     initialSlide: 0,
-    speed: 200,
-    autoplay: true
+    speed: 200
   };
-
+  
 
 }
