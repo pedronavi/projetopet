@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button slot="start">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="toolbar">Cadastro</ion-title>
+  </ion-toolbar>
+  <!--  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Fotos</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="achados">
+
+    <ion-slides pager [options]="slideOpts">
+      <ion-slide class="slide1">
+        <img src="assets/images/slide1.png">
+      </ion-slide>
+
+      <ion-slide class="slide2">
+        <img src="assets/images/caofilhote.jpg">
+      </ion-slide>
+      <ion-slide class="slide3">
+        <img src="assets/images/gato.jpg">
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="back">
+    <ion-card-title class="cadastreseuanimal"> Cadastre seu animal </ion-card-title>
+    <form #form="ngForm" (submit)="salvar(form)">
+      <ion-card color="primary">
+        <ion-item>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input minlength=4 maxlenght=20 type="text" name="nome" ngModel> </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Url</ion-label>
+          <ion-input minlength=10 maxlength=255 type="text" name="url" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Local</ion-label>
+          <ion-input type="text" name="endereco" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Gênero</ion-label>
+          <ion-input type="text" name="genero" ngModel></ion-input>
+        </ion-item>
+
+        <!-- inputmode="url" ?? minlength ?? maxlength ?? -->
+        <ion-item>
+          <ion-label position="floating">Descrição</ion-label>
+          <ion-input minlength=4 maxlenght=20 type="text" name="descricao" ngModel></ion-input>
+        </ion-item>
+
+      </ion-card>
+
+      <ion-button class="button" expand="block" type="submit" (click)="toast()">Enviar</ion-button>
+
+    </form>
+
+  </div>
+
+</ion-content>

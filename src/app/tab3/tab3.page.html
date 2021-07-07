@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+ <!-- <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Login / Cadastro</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="background-img">
+ <!--   <div class= "achados">
+      
+      <ion-slides pager>
+        <ion-slide class="slide1">
+          <img src="assets/images/slidepet.png">
+        </ion-slide>
+  
+        <ion-slide class="slide2">
+          <img src="assets/images/slide1.png">
+        </ion-slide>
+        <ion-slide class="slide3">
+          <img src="assets/images/slidepet.png">
+        </ion-slide>
+  
+   
+      </ion-slides>
+    </div>
+-->
+  <ion-slides pager>
+    <ion-slide>
+      <div class="ion-padding">
+        
+         <ion-label> Login </ion-label>
+         <ion-item  class="ion-margin-top" lines="none">
+          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+        </ion-item>
+
+        <ion-item  class="ion-margin-top" lines="none">
+          <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
+        </ion-item>
+
+        <ion-button class="button" (click)="login()" expand="block">
+          Entrar
+        </ion-button>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span class="span">Faça seu Cadastro</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="text" placeholder="Nome"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="password" placeholder="Senha" [(ngModel)]="userRegister.password"></ion-input>
+        </ion-item>
+
+      
+        <ion-button  (click)="register()" expand="block">
+          Cadastrar
+        </ion-button>
+        
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- <div class="ocean">
+    <div class="waves" [ngStyle]="{'background-position-x': wavesPosition + 'px'}"></div>
+
+    <div class="container bottom ion-text-center" [hidden]="keyboard.isVisible">
+    </div>
+  </div> -->
+</div>
+</ion-content>
